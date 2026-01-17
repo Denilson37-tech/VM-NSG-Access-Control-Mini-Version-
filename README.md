@@ -54,3 +54,26 @@ Shows awareness of attack surface reduction
 Highlights why controlling inbound traffic is critical in real environments
 I documented the project and included screenshots
 
+Why This Project Matters
+
+Most cloud incidents do not start with advanced attacks. They start with misconfigured network access.
+
+This project shows that I can:
+
+Identify exposure
+
+Apply least privilege network access
+
+Test my controls
+
+Explain security decisions
+
+Outcome
+
+By adding rule explanations, testing validation, and context, this project now demonstrates:
+
+Practical NSG security implementation
+
+Understanding of least privilege and attack surface reduction
+
+Clear, tested, and explainable results.
