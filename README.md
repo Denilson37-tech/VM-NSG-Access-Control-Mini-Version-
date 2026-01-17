@@ -1,79 +1,59 @@
-Securing an Azure Virtual Machine with Network Security Groups (NSG)
+Securing an Azure Virtual Machine with Network Security Groups
 
-This project started with a simple problem.
-A virtual machine in Azure was running, but the network was wide open. Anyone could attempt to connect. This is how real cloud breaches begin.
+Project Story
 
-As a junior Azure security engineer, my responsibility is not to build complex systems. My responsibility is to reduce obvious risk.
+I had a virtual machine running in Azure. Without security controls in place, it was exposed to the internet and could be targeted by unauthorized users.
 
-So I focused on one thing.
-Control who can talk to the VM and who cannot.
+In real cloud environments, misconfigured network access is a common source of compromise. My goal in this project was to secure that VM by restricting inbound network access with a Network Security Group.
 
-I used a Network Security Group to define inbound and outbound rules. Only required traffic was allowed. Everything else was denied by default.
+NSGs act as a firewall for Azure resources and let me control traffic in and out of a VM at the network layer.
 
-This mirrors real-world environments where misconfigured NSGs expose workloads to the internet.
+What I Built
 
-What I Did in This Project
+I created an NSG and applied it to the VM so that only trusted traffic is allowed. I reviewed the default rules, added specific security rules, and tested that traffic was blocked or allowed as intended.
 
-I created a virtual machine in Azure
-I attached a Network Security Group (NSG) to the VM
-I reviewed the default rules to understand existing exposure
-I created custom inbound rules to restrict access
-I validated that only permitted traffic could reach the VM
+Step 1: Create or Identify the VM
 
-What I Did in This Project
+I used the Azure portal to create a virtual machine or select an existing one.
 
-I created a virtual machine in Azure
-I attached a Network Security Group (NSG) to the VM
-I reviewed the default rules to understand existing exposure
-I created custom inbound rules to restrict access
-I validated that only permitted traffic could reach the VM
-I documented the project and included screenshots
+Screenshot 1 shows the VM overview page and proves the VM is running in Azure
 
-Explain each rule
+Step 2: Apply a Network Security Group
 
-Allowed RDP (3389) only from my IP to prevent unauthorized login
+I created a Network Security Group and attached it to the VM’s network interface or subnet.
 
-Allowed HTTP (80) only for testing purposes
+I reviewed the default NSG rules to understand the initial exposure
+I added custom rules to restrict access
 
-Blocked all other inbound traffic by default
+Example custom rules I created
 
-Validation / Testing
+Allow RDP (3389) only from my trusted IP address so only I can manage the VM
+Allow HTTP (80) for test purposes from trusted sources
+All other inbound traffic blocked by default
 
-Attempted RDP from allowed IP → connected successfully
+Screenshot 2 shows the NSG rules applied to the VM
 
-Attempted RDP from a different IP → connection blocked
+Step 3: Test Access
 
-This proves the rules work as intended
+I validated that the rules worked
 
-Security Context
+Accessing the VM from my trusted IP with RDP worked
+Accessing from another IP was blocked
 
-This project demonstrates least privilege access
+Screenshot 3 shows the test results with allowed and blocked traffic
 
-Shows awareness of attack surface reduction
+Why This Matters
 
-Highlights why controlling inbound traffic is critical in real environments
-I documented the project and included screenshots
+Network Security Groups are fundamental to protecting workloads in Azure. They control traffic to and from resources
 
-Why This Project Matters
+Any open or poorly restricted port increases risk
+Restricting access reduces the attack surface
+Testing traffic proves the controls are effective
 
-Most cloud incidents do not start with advanced attacks. They start with misconfigured network access.
-
-This project shows that I can:
-
-Identify exposure
-
-Apply least privilege network access
-
-Test my controls
-
-Explain security decisions
+This is how teams secure VMs in real environments
 
 Outcome
 
-By adding rule explanations, testing validation, and context, this project now demonstrates:
+Restricting network access to trusted sources reduces the risk of unauthorized login attempts and internet exposure
 
-Practical NSG security implementation
-
-Understanding of least privilege and attack surface reduction
-
-Clear, tested, and explainable results.
+This project shows practical Azure network security skills and demonstrates that I understand how to protect cloud resources
