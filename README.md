@@ -1,12 +1,56 @@
-# VM-NSG-Access-Control-Mini-Version-
-Secure VM access by controlling inbound traffic.
+Securing an Azure Virtual Machine with Network Security Groups (NSG)
 
-What was done:
+This project started with a simple problem.
+A virtual machine in Azure was running, but the network was wide open. Anyone could attempt to connect. This is how real cloud breaches begin.
 
-Deployed a Ubuntu VM in Azure.
+As a junior Azure security engineer, my responsibility is not to build complex systems. My responsibility is to reduce obvious risk.
 
-Attached NSG to the VM’s network interface.
+So I focused on one thing.
+Control who can talk to the VM and who cannot.
 
-Verified NSG rules for SSH/HTTP/HTTPS access.
-Skills demonstrated: VM deployment, network interface security, basic access control.
-Impact: Demonstrates ability to secure cloud resources in real-world scenarios.
+I used a Network Security Group to define inbound and outbound rules. Only required traffic was allowed. Everything else was denied by default.
+
+This mirrors real-world environments where misconfigured NSGs expose workloads to the internet.
+
+What I Did in This Project
+
+I created a virtual machine in Azure
+I attached a Network Security Group (NSG) to the VM
+I reviewed the default rules to understand existing exposure
+I created custom inbound rules to restrict access
+I validated that only permitted traffic could reach the VM
+
+What I Did in This Project
+
+I created a virtual machine in Azure
+I attached a Network Security Group (NSG) to the VM
+I reviewed the default rules to understand existing exposure
+I created custom inbound rules to restrict access
+I validated that only permitted traffic could reach the VM
+I documented the project and included screenshots
+
+Explain each rule
+
+Allowed RDP (3389) only from my IP to prevent unauthorized login
+
+Allowed HTTP (80) only for testing purposes
+
+Blocked all other inbound traffic by default
+
+Validation / Testing
+
+Attempted RDP from allowed IP → connected successfully
+
+Attempted RDP from a different IP → connection blocked
+
+This proves the rules work as intended
+
+Security Context
+
+This project demonstrates least privilege access
+
+Shows awareness of attack surface reduction
+
+Highlights why controlling inbound traffic is critical in real environments
+I documented the project and included screenshots
+
